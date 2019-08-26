@@ -1,6 +1,6 @@
 <!--  -->
 <template>
-  <div class="mui-text-center content">
+  <div class="text-center content">
     <p>&copy;德才家教版权所有</p>
     <p>请家教热线：076-123456</p>
     <p>点击拨打，时间：80:0-180:0</p>

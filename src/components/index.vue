@@ -15,42 +15,42 @@
       </mt-swipe-item>
     </mt-swipe>
     <!-- 分类 -->
-    <div class="mui-content">
-      <ul class="mui-table-view mui-grid-view mui-grid-6">
-        <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
+    <div class>
+      <ul class="clearfix table-view">
+        <li class="table-view-cell media col-xs-4 col-sm-4">
           <router-link to="/teacherList/yw">
             <img src="../../static/images/yw.jpg" />
-            <div class="mui-media-body">语文</div>
+            <div class="media-body">语文</div>
           </router-link>
         </li>
-        <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
+        <li class="table-view-cell media col-xs-4 col-sm-4">
           <router-link to="/teacherList/sx">
             <img src="../../static/images/sx.jpg" />
-            <div class="mui-media-body">数学</div>
+            <div class="media-body">数学</div>
           </router-link>
         </li>
-        <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
+        <li class="table-view-cell media col-xs-4 col-sm-4">
           <router-link to="/teacherList/yy">
             <img src="../../static/images/yy.jpg" />
-            <div class="mui-media-body">英语</div>
+            <div class="media-body">英语</div>
           </router-link>
         </li>
-        <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
+        <li class="table-view-cell media col-xs-4 col-sm-4">
           <router-link to="/teacherList/wl">
             <img src="../../static/images/wl.jpg" />
-            <div class="mui-media-body">物理</div>
+            <div class="media-body">物理</div>
           </router-link>
         </li>
-        <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
+        <li class="table-view-cell media col-xs-4 col-sm-4">
           <router-link to="/teacherList/sw">
             <img src="../../static/images/sw.jpg" />
-            <div class="mui-media-body">生物</div>
+            <div class="media-body">生物</div>
           </router-link>
         </li>
-        <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
+        <li class="table-view-cell media col-xs-4 col-sm-4">
           <router-link to="/teacherList/hx">
             <img src="../../static/images/hx.jpg" />
-            <div class="mui-media-body">化学</div>
+            <div class="media-body">化学</div>
           </router-link>
         </li>
       </ul>
@@ -73,59 +73,15 @@
     <div class="content-title">
       <div class="msyx">优选名师</div>
       <div class="more">
-        <router-link to="/teacherList">全部></router-link></div>
+        <router-link to="/teacherList">
+          全部
+          <span class="glyphicon glyphicon-menu-right pull-right"></span>
+        </router-link>
+      </div>
     </div>
     <!-- 列表 -->
-    <div>
-      <ul class="mui-table-view">
-        <li class="mui-table-view-cell mui-media">
-          <router-link to="/teacherDetail/1" class>
-            <img class="mui-media-object mui-pull-left" src="../../static/images/w.jpg" />
-            <div class="mui-media-body">
-              <div class="mui-ellipsis">
-                <span class="name">张三</span>
-                <span class="phone">T123456789</span>
-              </div>
-              <div class="mui-ellipsis">
-                <span class="school">文理学院</span>
-                <span class="subject">英语</span>
-              </div>
-              <div class="mui-ellipsis">
-                <span class="card-1">
-                  <i>身</i>本科大一学生
-                </span>
-                <span class="card-2">
-                  <i>证</i>已认证
-                </span>
-              </div>
-            </div>
-          </router-link>
-        </li>
-        <li class="mui-table-view-cell mui-media">
-          <router-link to="/teacherDetail/2" class>
-            <img class="mui-media-object mui-pull-left" src="../../static/images/w.jpg" />
-            <div class="mui-media-body">
-              <div class="mui-ellipsis">
-                <span class="name">张三</span>
-                <span class="phone">T123456789</span>
-              </div>
-              <div class="mui-ellipsis">
-                <span class="school">文理学院</span>
-                <span class="subject">英语</span>
-              </div>
-              <div class="mui-ellipsis">
-                <span class="card-1">
-                  <i>身</i>本科大一学生
-                </span>
-                <span class="card-2">
-                  <i>证</i>已认证
-                </span>
-              </div>
-            </div>
-          </router-link>
-        </li>
-      </ul>
-    </div>
+    <TeacherList></TeacherList>
+    <!-- 底部部分 -->
     <Footer></Footer>
   </div>
 </template>
@@ -134,11 +90,13 @@
 import Vue from "vue";
 import { Swipe, SwipeItem } from "mint-ui";
 import Footer from "@/components/footer";
+import TeacherList from "@/components/teacher/teacherListComponent";
 Vue.component(Swipe.name, Swipe);
 Vue.component(SwipeItem.name, SwipeItem);
 export default {
   components: {
-    Footer
+    Footer,
+    TeacherList
   },
   data() {
     return {};
@@ -161,37 +119,38 @@ export default {
 </script>
 
 <style lang='scss' scoped>
+.media:first-child {
+  margin-top: 15px;
+}
 .mint-swipe {
   width: 100%;
   height: 215px;
   .mint-swipe-item {
+    width: 100%;
+    height: 100%;
     img {
       display: block;
       width: 100%;
+      height: 100%;
     }
   }
 }
 
-.mui-content > .mui-table-view:first-child {
-  margin-top: 5px;
+.table-view {
+  padding-left: 0;
 }
-.mui-table-view-cell {
+
+.table-view-cell {
+  text-align: center;
   img {
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
   }
-  .mui-media-body {
-    font-size: 14px !important;
-    line-height: 14px !important;
-    color: #444 !important;
+  .media-body {
+    padding-top: 10px;
   }
 }
-.mui-table-view:before {
-  height: 0;
-}
-.mui-content .mui-table-view:after {
-  height: 0;
-}
+
 .text-word {
   text-align: center;
   padding: 5px 0 10px 0;
@@ -223,6 +182,7 @@ p {
   }
 }
 .content-title {
+  margin-top: 10px;
   font-size: 14px;
   padding: 10px 20px;
   display: flex;
@@ -232,54 +192,65 @@ p {
     margin-left: 40px;
   }
   .more {
-    width: 40px;
-    text-align: center;
+    a {
+      width: 40px;
+      text-align: center;
+      span {
+        margin-top: 2px;
+      }
+    }
   }
 }
-.mui-media-object {
-  border-radius: 5px;
-  min-width: 64px !important;
-  min-height: 64px !important;
+.teacher-info {
+  margin-top: 10px;
+  .media-content {
+    margin: 0 20px 5px 20px;
+    padding: 5px 0;
+    border-bottom: 1px solid #ccc;
+  }
 }
-.mui-media-body {
-  .mui-ellipsis {
-    .school,
-    .subject,
-    .name {
-      font-size: 15px;
-      color: #222;
-      padding-right: 10px;
-    }
+.media-object {
+  border-radius: 5px;
+  width: 64px;
+  height: 64px;
+}
+.media-body {
+  .school,
+  .subject,
+  .name {
+    font-size: 15px;
+    color: #222;
+    padding-right: 10px;
+  }
 
-    padding: 4px;
+  padding: 0 4px;
+  i {
+    display: inline-block;
+    line-height: 16px;
+    text-align: center;
+    min-width: 16px !important;
+    min-height: 16px !important;
+    font-style: normal;
+    font-size: 12px;
+    margin-right: 2px;
+
+    color: #fff;
+    border-radius: 2px;
+  }
+  .card-1,
+  .phone {
+    padding-right: 20px;
+    color: #888;
     i {
-      display: inline-block;
-      line-height: 16px;
-      text-align: center;
-      min-width: 16px !important;
-      min-height: 16px !important;
-      font-style: normal;
-      font-size: 12px;
-      margin-right: 2px;
-
-      color: #fff;
-      border-radius: 2px;
+      background-color: #ff9900;
     }
-    .card-1,
-    .phone {
-      padding-right: 20px;
-      color: #888;
-      i {
-        background-color: #ff9900;
-      }
-    }
-    .card-2 {
-      color: #888;
-      padding-right: 20px;
+  }
+  .card-2 {
+    color: #888;
+    padding-right: 20px;
 
-      i {
-        background-color: #e94326;
-      }
+    i {
+      background-color: #e94326;
     }
   }
 }
