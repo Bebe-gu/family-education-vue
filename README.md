@@ -2,6 +2,7 @@
 
 > A Vue.js project
 
+![image](https://github.com/Bebe-gu/family-education-vue/blob/master/static/images/demo.png)
 ## Build Setup
 
 ``` bash
