@@ -1,26 +1,31 @@
 <!--  -->
 <template>
   <div class>
-    <router-link to="/teacherDetail">
+    <router-link :to="{path:'/teacherDetail',query:{id:item.id}}" v-for="item in teachers" :key="item.id">
       <div class="media teacher-info">
         <div class="media-content">
           <div class="media-left">
             <a href="#">
-              <img class="media-object" src="/static/images/w.jpg" alt />
+              <img
+                class="media-object"
+                :src="item.sex==1?'/static/images/w.jpg':'/static/images/m.jpg'"
+                alt
+              />
             </a>
           </div>
           <div class="media-body">
             <div class>
-              <span class="name">张三</span>
-              <span class="phone">T123456789</span>
+              <span class="name">{{item.name}}</span>
+              <span class="phone">{{item.teacher_number}}</span>
             </div>
             <div class>
-              <span class="school">文理学院</span>
-              <span class="subject">英语</span>
+              <span class="school">{{item.university}}</span>
+              <span class="subject">{{item.subject}}</span>
             </div>
             <div class>
               <span class="card-1">
-                <i>身</i>本科大一学生
+                <i>身</i>
+                {{item.identity}}
               </span>
               <span class="card-2">
                 <i>证</i>已认证
@@ -30,7 +35,7 @@
         </div>
       </div>
     </router-link>
-    <router-link to="/teacherDetail">
+    <!-- <router-link to="/teacherDetail">
       <div class="media teacher-info">
         <div class="media-content">
           <div class="media-left">
@@ -58,21 +63,29 @@
           </div>
         </div>
       </div>
-    </router-link>
+    </router-link>-->
   </div>
 </template>
 
 <script>
+import axios from "axios";
 export default {
   components: {},
   data() {
-    return {};
+    return {
+      teachers: []
+    };
   },
   computed: {},
   watch: {},
   //方法集合
   methods: {},
-  created() {},
+  created() {
+    axios.get("http://localhost:3000/api/teachers").then(res => {
+      this.teachers = res.data;
+      console.log(res.data);
+    });
+  },
   //生命周期 - 挂载完成（可以访问DOM元素）
   mounted() {},
   beforeCreate() {},

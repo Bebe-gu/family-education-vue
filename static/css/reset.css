@@ -7,6 +7,12 @@ a {
     -webkit-backface-visibility: hidden;
 }
 
+a:hover,
+a:visited,
+a:link {
+    text-decoration: none
+}
+
 ul,
 li {
     padding: 0;
