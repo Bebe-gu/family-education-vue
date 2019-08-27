@@ -1,7 +1,7 @@
 <!--  -->
 <template>
   <div class>
-    <router-link to="/teacherDetail/1">
+    <router-link to="/teacherDetail">
       <div class="media teacher-info">
         <div class="media-content">
           <div class="media-left">
@@ -30,7 +30,7 @@
         </div>
       </div>
     </router-link>
-    <router-link to="/teacherDetail/1">
+    <router-link to="/teacherDetail">
       <div class="media teacher-info">
         <div class="media-content">
           <div class="media-left">
@@ -101,11 +101,9 @@ export default {
     }
   }
 }
-
 .table-view {
   padding-left: 0;
 }
-
 .table-view-cell {
   text-align: center;
   img {
@@ -116,7 +114,6 @@ export default {
     padding-top: 10px;
   }
 }
-
 .text-word {
   text-align: center;
   padding: 5px 0 10px 0;
@@ -137,7 +134,6 @@ p {
     flex: 1;
     border-right: 1px solid #ccc;
   }
-
   .students {
     text-align: center;
     flex: 1;
@@ -175,9 +171,10 @@ p {
     padding: 5px 0;
     border-bottom: 1px solid #eee;
     .media-left {
+      width: 25%;
     }
     .media-body {
-      flex: 1;
+      width: 75%;
       .school,
       .subject,
       .name {
@@ -192,7 +189,6 @@ p {
     width: 64px;
     height: 64px;
   }
-
   padding: 0 4px;
   i {
     display: inline-block;
@@ -203,7 +199,6 @@ p {
     font-style: normal;
     font-size: 12px;
     margin-right: 2px;
-
     color: #fff;
     border-radius: 2px;
   }
@@ -218,11 +213,9 @@ p {
   .card-2 {
     color: #888;
     padding-right: 20px;
-
     i {
       background-color: #e94326;
     }
   }
 }
 </style>
-

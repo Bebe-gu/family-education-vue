@@ -81,8 +81,8 @@
     </div>
     <!-- 列表 -->
     <TeacherList></TeacherList>
-    <!-- 底部部分 -->
     <Footer></Footer>
+      <!-- <OrderBar></OrderBar> -->
   </div>
 </template>
 
@@ -90,13 +90,15 @@
 import Vue from "vue";
 import { Swipe, SwipeItem } from "mint-ui";
 import Footer from "@/components/footer";
-import TeacherList from "@/components/teacher/teacherListComponent";
+import TeacherList from "@/components/teacherListComponent";
+// import OrderBar from "@/components/orderBarComponent";
 Vue.component(Swipe.name, Swipe);
 Vue.component(SwipeItem.name, SwipeItem);
 export default {
   components: {
     Footer,
     TeacherList
+
   },
   data() {
     return {};

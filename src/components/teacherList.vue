@@ -8,6 +8,8 @@
     </mt-header>
     <SelectList></SelectList>
     <TeacherList></TeacherList>
+    <Footer></Footer>
+      <!-- <OrderBar></OrderBar> -->
   </div>
 </template>
 <script>
@@ -15,12 +17,14 @@ import Vue from "vue";
 import Multiselect from "vue-multiselect";
 import { Header } from "mint-ui";
 import SelectList from "@/components/selectListComponent";
-import TeacherList from "@/components/teacher/teacherListComponent";
+import TeacherList from "@/components/teacherListComponent";
+import Footer from "@/components/footer";
+// import OrderBar from "@/components/orderBarComponent";
 
 Vue.component(Header.name, Header);
 
 export default {
-  components: { SelectList ,TeacherList},
+  components: { SelectList ,TeacherList,Footer},
   data() {
     return {
       selected: null,

@@ -119,50 +119,5 @@ export default {
   //color: #333;
 }
 
-//@import url(); 引入公共css类
-// .btn-select {
-//   background-color: #fff;
-// }
-// .btn-group.open .dropdown-toggle {
-//   -webkit-box-shadow: none;
-//   box-shadow: none;
-// }
-// .btn-nav {
-//   border-bottom: 1px solid #ccc;
-// }
 
-// .list-box {
-//   display: flex;
-//   border-bottom: 1px solid #eee;
-//   .list-menu {
-//     list-style: none;
-//     margin: 0;
-//     padding: 0;
-//     li {
-//       width: 100px;
-//       border-right: 1px solid #eee;
-//       border-bottom: 1px solid #eee;
-//       padding: 10px 20px;
-//       text-align: center;
-//       &:last-child {
-//         border-bottom: 0;
-//       }
-//     }
-//   }
-//   .list-info {
-//     flex: 1;
-//     padding: 10px;
-//     a {
-//       display: inline-block;
-//       border: 1px solid #eee;
-//       padding: 5px;
-//       margin: 5px;
-//       border-radius: 5px;
-//     }
-//     a.active {
-//       border: 1px solid #2aca4d;
-//       color: #2aca4d;
-//     }
-//   }
-// }
 </style>
